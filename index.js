@@ -94,6 +94,9 @@ app.get('/populate', async (req, res) => {
     res.send('done!!!')
 })
 
+    res.send('this is teh github test route!!!');
+})
+
 //errors and opening!
 app.use((req, res, next) => {
     res.send('general error page!')

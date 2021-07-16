@@ -627,9 +627,7 @@ main{
     align-items: center;
 }
 
-.totalPayNow:nth-child(n){
-    margin : 0px 10px;
-}
+
 
 .cartItemsList::-webkit-scrollbar{
     width: 10px;

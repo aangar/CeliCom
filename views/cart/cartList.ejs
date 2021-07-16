@@ -4,7 +4,12 @@
             <h1>Your Current Cart:</h1>
             <div class="cartItemsList">
                 <% if(cart.length <=0) {%>
-                    <h1>nothing???</h1>
+                    <div class="itemCartContainer">
+                        <div id="thisisherebcempty">
+                            <h2>Hmm... your cart is empty.</h2>
+                            <h2>Check back later, or perhaps you'll <a href="/products">keep shopping?</a></h2>
+                        </div>
+                    </div>
                     <% }else{ %>
 
                         <% for(let c of cart) {%>
@@ -15,9 +20,11 @@
                                 </div>
                                 <div class="itemCartInfoContainer">
                                     <h2>
-                                        <%= c.name %>
+                                        <a href="products/<%= c._id %> " style="color : #173eee;">
+                                            <%=c.name %>
+                                        </a>
                                     </h2>
-                                    <a href="/remove/<%=c._id %> ">Remove</a>
+                                    <a href="cart/remove/<%=c._id %> ">Remove</a>
 
                                     <span></span>
                                     <h2>

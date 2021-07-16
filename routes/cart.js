@@ -8,4 +8,6 @@ router.route('/')
 
 router.put('/update', loginCheck, cartRoutes.updateCart)
 
+router.get('/remove/:id', loginCheck, cartRoutes.removeItem);
+
 module.exports = router;

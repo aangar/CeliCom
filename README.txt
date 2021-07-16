@@ -19,3 +19,7 @@ CURRENTLY IN PROGRESS:
         +logged IN
         +time and date
         +all the goodies
+-make the form and routes to handle the creation of a listing being made
+    >use locals.currentUser to find the user, make a copy, then resave that as a new bit.
+    >consider making a post route to change the info later on, but dunno how this would be usefuL( just a put?? )
+-ADD AN ERROR PAGE FFS THAT ISNT JUST SENDING

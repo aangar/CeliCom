@@ -674,3 +674,21 @@ main{
     align-items: center;
 }
 /*alreadyExists styling end*/
+
+/*make a listing page styling begin*/
+
+.createListingContainer{
+    width : 100%;
+    height : 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createListingForm{
+    width : 90%;
+    height:  90%;
+    background-color: #173eee;
+}
+
+/*make a listing page styling end*/

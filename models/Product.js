@@ -22,10 +22,14 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    gender : {
-        type : String,
-        enum : ['Boys' , 'Girls' , 'Mens' , "Womens" , "Unisex"],
-        required : true
+    gender: {
+        type: String,
+        enum: ['Boys', 'Girls', 'Mens', "Womens", "Unisex"],
+        required: true
+    },
+    seller: {
+        type: String,
+        required: true
     }
 })
 

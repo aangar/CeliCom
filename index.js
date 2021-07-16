@@ -12,6 +12,7 @@ const projectRoutes = require('./routes/products');
 const advancedRoutes = require('./routes/advanced');
 const userRoutes = require('./routes/users');
 const cartRoutes = require('./routes/cart');
+const listingRoutes = require('./routes/makeListing');
 
 const session = require('express-session');
 const passport = require('passport');
@@ -62,6 +63,7 @@ app.use('/filter', filterRoutes);
 app.use('/advanced', advancedRoutes);
 app.use('/users', userRoutes);
 app.use('/cart', cartRoutes);
+app.use('/makeListing', listingRoutes);
 
 app.get('/populate', async (req, res) => {
     await Product.deleteMany();
@@ -86,7 +88,8 @@ app.get('/populate', async (req, res) => {
             brand: brands[rand3],
             color: colors[rand1],
             size: test,
-            gender: genders[rand1]
+            gender: genders[rand1],
+            seller: 'anon'
         })
         await p.save();
 

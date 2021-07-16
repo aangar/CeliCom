@@ -94,6 +94,7 @@ app.get('/populate', async (req, res) => {
     res.send('done!!!')
 })
 
+app.get('/test', (req, res) => {
     res.send('this is teh github test route!!!');
 })
 

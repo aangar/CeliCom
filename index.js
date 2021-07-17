@@ -19,7 +19,7 @@ const passport = require('passport');
 const localStrat = require('passport-local');
 
 
-mongoose.connect('mongodb://localhost:27017/eCom', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect('mongodb://localhost:27017/eCom', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {

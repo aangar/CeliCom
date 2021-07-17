@@ -1,4 +1,3 @@
-const flash = require('connect-flash');
 
 module.exports.checkSearch = (req, res, next) => {
     if (req.query.query.length <= 2) {

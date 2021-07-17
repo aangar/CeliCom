@@ -1,6 +1,94 @@
 <% layout('partials/boilerplate') %>
-    <div class="createListingContainer">
-        <div class="createListingForm">
-            <form action="" id="createListing"></form>
+    <% if(error) {%>
+        <div id="errorBar">
+            <h1>
+                <%=msg %>
+            </h1>
+            <div class="closeThis">
+                <img src="assets/closeDark.png" alt="">
+            </div>
         </div>
-    </div>
+        <% } %>
+
+            <div class="createListingContainer">
+                <div class="createListingForm">
+                    <form action="/makeListing" method="POST" id="createListing">
+                        <h2>Product Name:</h2>
+                        <input type="text" name="name" autocomplete="off" required>
+                        <h2>Price: </h2>
+                        <input type="number" name="price" step="0.01" autocomplete="off" required>
+                        <h2>Product Description: </h2>
+                        <input type="text" name="description" autocomplete="off">
+                        <h2>Type of Product:</h2>
+                        <select name="type" id="type" style="width: 30%; font-size: 1.15rem;">
+                            <option value="default">--SELECT A TYPE--</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Socks">Socks</option>
+                            <option value="Pants">Pants</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Underwear">Underwear</option>
+                        </select>
+                        <h2>Gender:</h2>
+                        <div class="genderOptions">
+                            <input type="radio" name="gender" value="Mens" id="Mens"><label for="Mens">Mens</label>
+                            <input type="radio" name="gender" value="Womens" id="Womens"><label
+                                for="Womens">Womens</label>
+                            <input type="radio" name="gender" value="Boys" id="Boys"><label for="Boys">Boys</label>
+                            <input type="radio" name="gender" value="Girls" id="Girls"><label for="Girls">Girls</label>
+                            <input type="radio" name="gender" value="Unisex" id="Unisex"><label
+                                for="Unisex">Unisex</label>
+                        </div>
+                        <div class="sizeBrandColor">
+                            <div id="sizeContainer">
+                                <h2>Size</h2>
+                                <div id="sizeOptions">
+                                    <select name="size" id="size">
+                                        <option value="default">--SELECT A SIZE--</option>
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="brandOptions">
+                                <h2>Brand: </h2>
+                                <select name="brand" id="brand">
+                                    <option value="default"></option>
+                                    <option value="Adidas">Adidas</option>
+                                    <option value="Nike">Nike</option>
+                                    <option value="Under Armour">Under Armour</option>
+                                    <option value="Puma">Puma</option>
+                                    <option value="Tommy Hilfilger">Tommy Hilfilger</option>
+                                    <option value="Unlisted">Unlisted</option>
+                                </select>
+                            </div>
+
+                            <div id="colorOptions">
+                                <h2>Color: </h2>
+                                <select name="color" id="color">
+                                    <option value="default">--SELECT A COLOR--</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Orange">Orange</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Green">Green</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Indigo">Indigo</option>
+                                    <option value="Violet">Violet</option>
+                                    <option value="Unlisted">Unlisted</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <button>Create Listing!</button>
+                    </form>
+                </div>
+            </div>
+
+            <script src="js/createSizeChange.js"></script>

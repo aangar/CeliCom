@@ -15,17 +15,13 @@ ADDED :
 -made the post route for the listing creation, havent made the actual database save yet.
 -made a validation middleware.
 -added an error handle for the post route.
+-added the post route logic in the entirety, so it just adds the id to the posters profile.
+-can find things by the ID Search!!!
 
 
 
 CURRENTLY IN PROGRESS:
 -once thats complete, check on Slack workspace for some ideas, or:
-    >work on users making listings
-        +verification
-        +logged IN
-        +time and date
-        +all the goodies
--make the form and routes to handle the creation of a listing being made
-    >use locals.currentUser to find the user, make a copy, then resave that as a new bit.
-    >consider making a post route to change the info later on, but dunno how this would be usefuL( just a put?? )
+    >consider making a post route to change the info later on, but dunno how this would be useful( just a put?? )
+    >make a page showing the posting (or to potentially show), and then all the listings per user.
 -ADD AN ERROR PAGE FFS THAT ISNT JUST SENDING

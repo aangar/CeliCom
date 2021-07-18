@@ -97,6 +97,15 @@ app.get('/populate', async (req, res) => {
     res.send('done!!!')
 })
 
+app.get("/test", async (req, res) => {
+    const user = await User.findById(res.locals.currentUser._id);
+    for (let i of user.listings) {
+        const item = await Product.findById(i);
+        console.log(item);
+    }
+    res.send('console/???')
+})
+
 //errors and opening!
 app.use((req, res, next) => {
     res.send('general error page!')

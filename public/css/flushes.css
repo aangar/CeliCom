@@ -33,7 +33,7 @@ main{
 }
 
 .navbar .links{
-    flex : 2;
+    flex : 3;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -756,3 +756,61 @@ main{
     cursor: pointer;
 }
 /*make a listing page styling end*/
+
+/*the poster's listings page styling begin*/
+
+.userListingsGenContainer{
+    width : 100%;
+    height : 90vh;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userListingContainer{
+    width : 80%;
+    height : 90%;
+}
+
+.listingContainer{
+    width : 100%;
+    height : 30%;
+    border-bottom: 2px solid rgb(133, 133, 133);
+    display: flex;
+    align-items: center;
+}
+
+.listingContainer>div{
+    height : 90%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.15rem;
+}
+
+#listingPosted{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#listingPosted a{
+    background-color: #4361ee;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width : 80%;
+    padding : 1rem;
+    border-radius: 1rem;
+    transition: all 0.25s ease-in-out;
+}
+
+#listingPosted a:hover{
+    background-color: #173eee;
+    text-decoration: underline;
+
+}
+
+/*the poster's listings page styling end*/

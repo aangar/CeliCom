@@ -2,11 +2,13 @@
     <div class="navbar">
         <a href="/products" class="navName">eCom</a>
         <div class="links">
-            <a href="">About</a>
+
             <% if(currentUser) {%>
+                <a href="/users/<%= currentUser._id %>  %> /listings">Your Listings</a>
                 <a href="/makeListing">Sell Something</a>
                 <a href="/users/logout">Logout</a>
                 <% }else {%>
+                    <a href="">About</a>
                     <a href="/users/login">Login</a>
                     <% } %>
                         <a href="/cart" id="cart">Cart<img src="assets/white.png" alt=""></a>

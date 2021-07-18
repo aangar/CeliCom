@@ -17,6 +17,9 @@ ADDED :
 -added an error handle for the post route.
 -added the post route logic in the entirety, so it just adds the id to the posters profile.
 -can find things by the ID Search!!!
+7/18
+-fixed a small bug for the redirect on the post route when making a listing.
+-made the user listings page possible! still needs work on the routes and edit, mentioned below
 
 
 
@@ -24,4 +27,8 @@ CURRENTLY IN PROGRESS:
 -once thats complete, check on Slack workspace for some ideas, or:
     >consider making a post route to change the info later on, but dunno how this would be useful( just a put?? )
     >make a page showing the posting (or to potentially show), and then all the listings per user.
+    > from that page allow the user to then edit the posting.
+    >route for now is under products, reference the anchor on the listings page
+
+-make it so the errors are added in to the register route (messages already setup, just make a small error div like on the creation page)
 -ADD AN ERROR PAGE FFS THAT ISNT JUST SENDING

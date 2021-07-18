@@ -79,6 +79,7 @@ app.get('/populate', async (req, res) => {
         let val = `${colors[rand1]} ${type[rand2]}`;
         let determineShoe = (type[rand2] === 'Shoes') ? true : false;
         let test = (determineShoe) ? Math.floor(Math.random() * 14) : sizes[rand3];
+        const date = new Date();
         const p = new Product({
             name: val,
             price: Math.floor(Math.random() * 200),
@@ -89,7 +90,8 @@ app.get('/populate', async (req, res) => {
             color: colors[rand1],
             size: test,
             gender: genders[rand1],
-            seller: 'anon'
+            seller: 'anon',
+            time: date
         })
         await p.save();
 
@@ -97,14 +99,7 @@ app.get('/populate', async (req, res) => {
     res.send('done!!!')
 })
 
-app.get("/test", async (req, res) => {
-    const user = await User.findById(res.locals.currentUser._id);
-    for (let i of user.listings) {
-        const item = await Product.findById(i);
-        console.log(item);
-    }
-    res.send('console/???')
-})
+
 
 //errors and opening!
 app.use((req, res, next) => {

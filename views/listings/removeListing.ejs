@@ -1,0 +1,11 @@
+<% layout('partials/boilerplate') %>
+    <div id="removeGenContainer">
+        <h1>You are about to remove the following listing:</h1>
+        <h1>
+            <%=name %>
+        </h1>
+        <form action="/products/remove/<%=id %>" method="POST">
+            <button id="removeListing">Yes, remove this.</button>
+        </form>
+        <a href="/products">No, I changed my mind.</a>
+    </div>

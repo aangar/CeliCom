@@ -20,15 +20,16 @@ ADDED :
 7/18
 -fixed a small bug for the redirect on the post route when making a listing.
 -made the user listings page possible! still needs work on the routes and edit, mentioned below
+-made the update route work!!! 
+-made the removal route work, and added logic to remove it from the listers' listings.
 
 
 
 CURRENTLY IN PROGRESS:
 -once thats complete, check on Slack workspace for some ideas, or:
-    >consider making a post route to change the info later on, but dunno how this would be useful( just a put?? )
-    >make a page showing the posting (or to potentially show), and then all the listings per user.
-    > from that page allow the user to then edit the posting.
-    >route for now is under products, reference the anchor on the listings page
-
 -make it so the errors are added in to the register route (messages already setup, just make a small error div like on the creation page)
 -ADD AN ERROR PAGE FFS THAT ISNT JUST SENDING
+
+
+note for pro deploy : 
+-on deleting a listing, make sure to search for other users having it in their cart, then update that cart based on if it got removed. this could be a rendering problem in the future.

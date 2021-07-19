@@ -1,0 +1,30 @@
+<% layout('partials/boilerplate') %>
+    <% if(error) {%>
+        <div id="errorBar">
+            <h1>
+                <%=msg %>
+            </h1>
+            <div class="closeThis">
+                <img src="assets/closeDark.png" alt="">
+            </div>
+        </div>
+        <% } %>
+
+            <div class="createListingContainer">
+                <div class="createListingForm">
+                    <form action="/products/<%= product._id %>/update?_method=PUT" method="POST" id="createListing">
+                        <h2>Product Name:</h2>
+                        <input type="text" name="name" autocomplete="off" required value="<%= product.name %>">
+                        <h2>Price: </h2>
+                        <input type="number" name="price" step="0.01" autocomplete="off" required
+                            value="<%= product.price %>">
+                        <h2>Product Description: </h2>
+                        <input type="text" name="description" autocomplete="off" value="<%= product.description%>">
+                        <p>**If you want to change other info, please remove and add this as another listing**</p>
+                        <button>Save Changes</button>
+                        <a href="/products/remove/<%=product._id %>" id="removeListing">Remove</a>
+                    </form>
+                </div>
+            </div>
+
+            <script src="js/createSizeChange.js"></script>

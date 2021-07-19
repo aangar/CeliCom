@@ -1,20 +1,26 @@
 <% layout('partials/boilerplate') %>
     <div class="userListingsGenContainer">
         <div class="userListingContainer">
-            <% for(let p of products) {%>
-                <div class="listingContainer">
-                    <div id="listingName">
-                        Item Name: <%=p.name %>
-                    </div>
-                    <div id="listingPrice">
-                        Listing Price: $<%=p.price %>
-                    </div>
-                    <div id="listingPosted">
-                        Listed On: <%= p.time; %>
-                            <a href="products/<%=p._id %>/edit">Edit</a>
-                    </div>
-                </div>
-                <% } %>
+            <% if(products.length <=0) {%>
+                <h1>Nothing here... yet.</h1>
+                <% }else{ %>
+                    <% for(let p of products) {%>
+                        <div class="listingContainer">
+                            <div id="listingName">
+                                Item Name: <%=p.name %>
+                            </div>
+                            <div id="listingPrice">
+                                Listing Price: $<%=p.price %>
+                            </div>
+                            <div id="listingPosted">
+                                Listed On: <%= p.time; %>
+                                    <a href="products/<%=p._id %>/edit">Edit</a>
+                            </div>
+                        </div>
+                        <% } %>
+
+                            <% } %>
+
         </div>
 
     </div>

@@ -14,7 +14,7 @@ module.exports.createUser = async (req, res) => {
             email: email
         })
         const register = await User.register(user, password);
-        res.redirect('users/login');
+        res.redirect('/login');
     } catch (e) {
         //style register form then make the little error box in css.
         const msg = (e.code) ? 'The email was already in use!' : e.message;

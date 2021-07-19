@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
 
 const Product = require('./models/Product');
 const User = require('./models/User');
@@ -30,12 +32,38 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use(mongoSanitize());
+app.use(helmet());
+
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'"],
+        scriptSrc: ["'unsafe-inline'", "'self'"],
+        'style-src': ["'unsafe-inline'", "'self'"],
+        fontSrc: ["'none'"],
+        workerSrc: ["'self'"],
+        objectSrc: [],
+        imgSrc: [
+            "'self'",
+            "blob:",
+            "data:",
+            "https://images.unsplash.com/",
+        ],
+    }
+}));
 
 //need session before passport session and use stuff
 app.use(session({
+    name: 'session',
     secret: 'this secret is temporary',
     resave: false,
     saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
 }));
 
 app.use(passport.initialize());

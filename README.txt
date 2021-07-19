@@ -29,12 +29,15 @@ ADDED :
     >errors for login
     >restyled the error page
     >touched up some routes
+-added security stuff!!!
 
 
 CURRENTLY IN PROGRESS:
 -add some fine tune stuff:
     >limit results
     >tune the searches (they might be quite primitive, moreso the word search)
+-security and deployment
+-working on clearing the CSP errors for fonts
 
 
 note for pro deploy : 

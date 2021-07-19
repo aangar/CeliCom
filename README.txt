@@ -34,7 +34,7 @@ ADDED :
 
 CURRENTLY IN PROGRESS:
 -add some fine tune stuff:
-    >limit results
+    >limit results (make it so it accepts a parameter and redirect sorta thing??? use req.params and have that be a numeric value to search the db by.)
     >tune the searches (they might be quite primitive, moreso the word search)
 -security and deployment
 

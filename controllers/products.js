@@ -2,7 +2,7 @@ const Products = require('../models/Product');
 const User = require('../models/User');
 
 module.exports.getListings = async (req, res) => {
-    const found = await Products.find({})
+    const found = await Products.find({});
     res.render('products', { found })
 }
 

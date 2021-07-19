@@ -103,7 +103,7 @@ app.get('/populate', async (req, res) => {
 
 //errors and opening!
 app.use((req, res, next) => {
-    res.send('general error page!')
+    res.render('error')
 })
 
 app.listen(3000, () => {

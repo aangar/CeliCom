@@ -1,19 +1,51 @@
 <% layout('./partials/boilerplate') %>
+    <% if(error) {%>
+        <div id="errorBar">
+            <h1>
+                <%=msg %>
+            </h1>
+            <div class="closeThis">
+                <img src="assets/closeDark.png" alt="">
+            </div>
+        </div>
+        <% } %>
+            <div class="loginContainer">
+                <div class="loginFormContainer">
+                    <h1>Login Form!</h1>
+                    <form action="/users/login" method="POST">
+                        <div class="labelsInContainer">
+                            <div class="labelsContainer">
+                                <label for="">Username: </label>
+                                <label for="">
+                                    Password:
+                                </label>
+                            </div>
+                            <div class="inputsContainer">
+                                <input type="text" name="username" id="username" required>
 
-    <div class="loginContainer">
-        <div class="loginFormContainer">
-            <h1>Login Form!</h1>
-            <form action="/users/login" method="POST">
-                <div class="userPassContainer">
-                    <label for="username">Username: </label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Password: </label>
-                    <input type="password" name="password" id="password">
+                                <input type="password" name="password" id="password" required>
+                            </div>
+                        </div>
+                        <button>Login!</button>
+                        <a href="/users/register">Sign Up?</a>
+                    </form>
                 </div>
 
-                <button>Login!</button>
-                <a href="/users/register">Sign Up?</a>
-            </form>
-        </div>
+            </div>
 
-    </div>
+
+            <script>
+                try {
+                    const closeOut = document.querySelector('.closeThis');
+                    const errorMsg = document.querySelector('#errorBar')
+                    closeOut.addEventListener('click', () => {
+                        errorMsg.style.opacity = 0;
+                        setTimeout(() => {
+                            errorMsg.style.zIndex = -100;
+
+                        }, 250)
+                    })
+                } catch (e) {
+
+                }
+            </script>

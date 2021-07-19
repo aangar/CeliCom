@@ -22,13 +22,19 @@ ADDED :
 -made the user listings page possible! still needs work on the routes and edit, mentioned below
 -made the update route work!!! 
 -made the removal route work, and added logic to remove it from the listers' listings.
-
+7/19
+-next major update completed!!!
+-foundation has been made in terms of listings!
+-added:
+    >errors for login
+    >restyled the error page
+    >touched up some routes
 
 
 CURRENTLY IN PROGRESS:
--once thats complete, check on Slack workspace for some ideas, or:
--make it so the errors are added in to the register route (messages already setup, just make a small error div like on the creation page)
--ADD AN ERROR PAGE FFS THAT ISNT JUST SENDING
+-add some fine tune stuff:
+    >limit results
+    >tune the searches (they might be quite primitive, moreso the word search)
 
 
 note for pro deploy : 

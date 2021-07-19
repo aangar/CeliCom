@@ -1,17 +1,60 @@
 <% layout('partials/boilerplate') %>
+    <% if(error) {%>
+        <div id="errorBar">
+            <h1>
+                <%=msg %>
+            </h1>
+            <div class="closeThis">
+                <img src="assets/closeDark.png" alt="">
+            </div>
+        </div>
+        <% } %>
 
-    <div class="loginContainer">
-        <div class="loginFormContainer">
-            <h1>REGISTER ROUTE!!!</h1>
-            <form action="/users/register" method="POST">
-                <div class="userPassContainer">
-                    <label for="username">Username : <input type="text" name="user[username]" id="username"></label>
-                    <label for="email">Email : <input type="email" name="user[email]" id="email"></label>
-                    <label for="password">Password : <input type="password" name="user[password]" id="password"></label>
+            <div class="loginContainer">
+                <div class="loginFormContainer">
+                    <h1>Sign Up</h1>
+
+                    <form action="/users/register" method="POST">
+                        <div class="labelsInContainer">
+                            <div class="labelsContainer">
+                                <label for="">Username: </label>
+                                <label for="">Email: </label>
+                                <label for="">
+                                    Password:
+                                </label>
+                            </div>
+                            <div class="inputsContainer">
+                                <input type="text" name="user[username]" id="username" required>
+                                <input type="email" name="user[email]" id="email" required>
+                                <input type="password" name="user[password]" id="password" required>
+                            </div>
+                        </div>
+                        <!-- <div class="userPassContainer">
+                            <label for="username">Username : <input type="text" name="user[username]"
+                                    id="username"></label>
+                            <label for="email">Email : <input type="email" name="user[email]" id="email"></label>
+                            <label for="password">Password : <input type="password" name="user[password]"
+                                    id="password"></label>
+                        </div> -->
+
+                        <button>Register!</button>
+                    </form>
                 </div>
 
-                <button>Register!</button>
-            </form>
-        </div>
+            </div>
 
-    </div>
+            <script>
+                try {
+                    const closeOut = document.querySelector('.closeThis');
+                    const errorMsg = document.querySelector('#errorBar')
+                    closeOut.addEventListener('click', () => {
+                        errorMsg.style.opacity = 0;
+                        setTimeout(() => {
+                            errorMsg.style.zIndex = -100;
+
+                        }, 250)
+                    })
+                } catch (e) {
+
+                }
+            </script>

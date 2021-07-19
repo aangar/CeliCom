@@ -3,7 +3,7 @@ const User = require('../models/User');
 const Product = require('../models/Product');
 
 module.exports.getRegisterForm = (req, res) => {
-    res.render('user/register')
+    res.render('user/register', { error: false, msg: '' })
 }
 
 module.exports.createUser = async (req, res) => {
@@ -14,17 +14,17 @@ module.exports.createUser = async (req, res) => {
             email: email
         })
         const register = await User.register(user, password);
-        res.redirect('/login');
+        res.redirect('login');
     } catch (e) {
         //style register form then make the little error box in css.
-        const msg = (e.code) ? 'The email was already in use!' : e.message;
-        res.send(msg);
+        const msg = (e.code) ? 'This email is already in use!' : e.message;
+        res.render('user/register', { error: true, msg: msg });
         //redirect or render a new page where the user islogged in
     }
 }
 
 module.exports.loginForm = (req, res) => {
-    res.render('user/login');
+    res.render('user/login', { error: false, msg: '' });
 }
 
 module.exports.login = async (req, res) => {

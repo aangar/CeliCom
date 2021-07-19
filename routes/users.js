@@ -11,8 +11,12 @@ router.route('/register')
 
 router.route('/login')
     .get(userRoutes.loginForm)
-    .post(passport.authenticate('local', { failureRedirect: "/users/login" }), userRoutes.login)
+    .post(passport.authenticate('local', { failureRedirect: "/users/login/in" }), userRoutes.login)
 
+
+router.get('/login/in', (req, res) => {
+    res.render('user/login', { error: true, msg: 'Those credentials are invalid.' })
+})
 router.route('/logout')
     .get(userRoutes.logout)
 

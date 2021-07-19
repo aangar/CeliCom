@@ -37,7 +37,6 @@ CURRENTLY IN PROGRESS:
     >limit results
     >tune the searches (they might be quite primitive, moreso the word search)
 -security and deployment
--working on clearing the CSP errors for fonts
 
 
 note for pro deploy : 

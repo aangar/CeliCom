@@ -40,8 +40,9 @@ app.use(helmet.contentSecurityPolicy({
         defaultSrc: ["'self'"],
         connectSrc: ["'self'"],
         scriptSrc: ["'unsafe-inline'", "'self'"],
-        'style-src': ["'unsafe-inline'", "'self'"],
-        fontSrc: ["'none'"],
+        'style-src': ["'unsafe-inline'", "fonts.googleapis.com"],
+        fontSrc: ["self", "fonts.gstatic.com"],
+        'style-src-elem': ["'self'"],
         workerSrc: ["'self'"],
         objectSrc: [],
         imgSrc: [

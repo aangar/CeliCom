@@ -50,6 +50,7 @@ app.use(helmet.contentSecurityPolicy({
             "blob:",
             "data:",
             "https://images.unsplash.com/",
+            "https://i2.wp.com/wallpapermaiden.com/image/2019/05/09/anime-girl-animal-ears-roar-nekomimi-cute-loli-33020-resized.jpeg"
         ],
     }
 }));

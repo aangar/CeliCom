@@ -555,6 +555,19 @@ main{
     color: white;
     cursor: pointer;
 }
+
+.closeThis h1 {
+    color: white;
+    background-color: #4361ee;
+    padding:  1rem;
+    border-radius: 1rem;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.closeThis h1:hover {
+    background-color: #173eee;
+    cursor: pointer;
+}
 /*loginForm styling end*/
 
 /*cart page styling begin*/

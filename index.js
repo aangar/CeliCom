@@ -5,6 +5,9 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT || 3000;
 
 const Product = require('./models/Product');
 const User = require('./models/User');
@@ -20,8 +23,10 @@ const session = require('express-session');
 const passport = require('passport');
 const localStrat = require('passport-local');
 
+const dburl = process.env.DB || 'mongodb://localhost:27017/eCom';
 
-mongoose.connect('mongodb://localhost:27017/eCom', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+
+mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -58,7 +63,7 @@ app.use(helmet.contentSecurityPolicy({
 //need session before passport session and use stuff
 app.use(session({
     name: 'session',
-    secret: 'this secret is temporary',
+    secret: process.env.SESSION || 'secretlmao',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -136,6 +141,6 @@ app.use((req, res, next) => {
     res.render('error')
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('commerce app open!');
 })
